@@ -71,6 +71,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
 
+# Thread HAL
+PRODUCT_PACKAGES += \
+    com.android.hardware.threadnetwork
+
+$(call soong_config_set,threadnetwork_apex,init_rc_namespace,device/google/rango)
+
 # VINTF
 DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/vintf/manifest.xml
