@@ -1,0 +1,25 @@
+# All firmware images are extracted from Google factory images for each new ASB
+
+abl.img;AB
+bl31.img;AB
+cap.img;AB
+cpm.img;AB
+dbc.img;AB
+dbl.img;AB
+dram_init_0.img;AB
+dram_init_1.img;AB
+dram_init_2.img;AB
+dram_init_3.img;AB
+dram_init_4.img;AB
+dram_init_5.img;AB
+dram_init_6.img;AB
+dram_init_7.img;AB
+dram_init_8.img;AB
+dram_init_9.img;AB
+dram_phy.img;AB
+gc.img;AB
+gdmc.img;AB
+gsa_bl1.img;AB
+gsa_fw.img;AB
+modem.img;AB
+tzsw.img;AB
