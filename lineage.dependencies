@@ -3,8 +3,4 @@
     "repository": "android_device_google_laguna",
     "target_path": "device/google/laguna"
   },
-  {
-    "repository": "android_device_google_rango-kernels",
-    "target_path": "device/google/rango-kernels"
-  }
 ]

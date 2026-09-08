@@ -30,3 +30,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
+
+-include vendor/lineage-priv/keys/keys.mk
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST := %
+
+TARGET_BUILD_VARIANT := userdebug
+TARGET_INCLUDE_ACCORD := true
+WITH_ADB_INSECURE := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_RELEASE := cp2a
