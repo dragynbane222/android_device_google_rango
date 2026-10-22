@@ -25,11 +25,10 @@ vendor.google.silicon.enable_iif_for_priv_app=1
 ro.odm.build.media_performance_class=33
 
 # SurfaceFlinger
-debug.sf.productionize_readback_screenshot=0
 debug.sf.set_idle_timer_ms_4619827677550801153=1500
 
 # SVN
-ro.vendor.build.svn=40
+ro.vendor.build.svn=43
 
 # Vibrator
 persist.vendor.vibrator.hal.pwle.frequency.min_hz=60.0

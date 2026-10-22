@@ -1,5 +1,6 @@
 genfscon debugfs /bpst u:object_r:vendor_battery_debugfs:s0
 genfscon sysfs /devices/platform/odm/odm:goodixfp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/sswrp_dpu@ec00000/eff8000.dsi2host/dw-dsi u:object_r:sysfs_display:s0
 genfscon sysfs /devices/platform/sswrp_dpu@ec00000/eff8000.dsi2host/dw-dsi/hs_clock u:object_r:sysfs_display:s0
 genfscon sysfs /devices/platform/sswrp_dpu@ec00000/eff8000.dsi2host/eff8000.dsi2host.0/backlight u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/sswrp_dpu@ec00000/eff8000.dsi2host/eff8000.dsi2host.0/color_data u:object_r:sysfs_display:s0
