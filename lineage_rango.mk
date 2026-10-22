@@ -31,3 +31,27 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
+
+-include vendor/lineage-priv/keys/keys.mk
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST := %
+PRODUCT_BUILD_IGNORE_APEX_CONTRIBUTION_CONTENTS := true
+
+# Lunch banner maintainer variable
+RISING_MAINTAINER="c_smith"
+
+# Chipset/Maintainer properties (ro.rising.chipset/ro.rising.maintainer)
+# Set RISING_MAINTAINER for version control
+# (Optional if builder is setting properties via init_<device>.cpp)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Google Tensor G5" \
+    RisingMaintainer="c_smith"
+
+RISING_MAINTAINER := c_smith
+
+# Disable/enable blur support, false by default
+TARGET_ENABLE_BLUR := true
+
+# Whether to ship aperture camera, false by default
+PRODUCT_NO_CAMERA := false
+
+WITH_GMS := true
