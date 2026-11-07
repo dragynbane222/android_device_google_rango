@@ -5,4 +5,4 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_rango.mk \
-    $(LOCAL_DIR)/lineage_rango.mk
+    $(LOCAL_DIR)/RedLintu16_rango.mk
