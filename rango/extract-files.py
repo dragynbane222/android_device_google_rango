@@ -39,10 +39,10 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
-        'com.google.edgetpu_app_service-V6-ndk',
+        'com.google.edgetpu_app_service-V10-ndk',
         'com.google.edgetpu_vendor_service-V2-ndk',
         'vendor.google.whitechapel.audio.audioext@4.0',
-        'vendor.google.whitechapel.audio.extension-V7-ndk',
+        'vendor.google.whitechapel.audio.extension-V8-ndk',
     ): lib_fixup_vendor_suffix,
 }
 
@@ -56,8 +56,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/etc/init/init.storage.rc',
     ) : blob_fixup()
         .regex_replace('ro.build.type=userdebug', 'ro.debuggable=1'),
-    'vendor/lib64/libedgetpu_litert.so': blob_fixup()
-        .clear_symbol_version('AHardwareBuffer_describe'),
     'vendor/lib64/libspeechenhancer.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_describe')
@@ -86,21 +84,14 @@ module = ExtractUtilsModule(
 
 def fix_vendor_file_list(file_list: FileList):
     module_suffix_file_paths = [
-        'vendor/lib64/com.google.edgetpu_app_service-V6-ndk.so',
+        'vendor/lib64/com.google.edgetpu_app_service-V10-ndk.so',
         'vendor/lib64/com.google.edgetpu_vendor_service-V2-ndk.so',
         'vendor/lib64/vendor.google.whitechapel.audio.audioext@4.0.so',
-        'vendor/lib64/vendor.google.whitechapel.audio.extension-V7-ndk.so',
+        'vendor/lib64/vendor.google.whitechapel.audio.extension-V8-ndk.so',
     ]
 
     for file_path in module_suffix_file_paths:
         file_list.get_file(file_path).set_arg(FileArgs.MODULE_SUFFIX, '_vendor')
-
-    powerstats_service_file_path = (
-        'vendor/bin/hw/android.hardware.power.stats-service.pixel'
-    )
-    file_list.get_file(powerstats_service_file_path).set_arg(
-        FileArgs.REQUIRED, 'pixel_powerstats_xml'
-    )
 
 
 module.add_generated_proprietary_file(

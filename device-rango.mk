@@ -37,7 +37,6 @@ PRODUCT_PACKAGES += \
     PixelWifiOverlay2025Rango \
     SafetyRegulatoryInfoOverlayProductRango \
     SettingsGoogleOverlayProductRango \
-    SettingsGoogleOverlayVendorRango \
     SettingsGoogleRangoOverlay \
     SettingsProviderOverlayProductRango \
     SettingsRangoOverlay \
@@ -47,6 +46,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     ApertureOverlayRango
+
+# Preinstalled packages
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/sysconfig/preinstalled-packages-prebuilt-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-prebuilt-product.xml \
+    $(DEVICE_PATH)/sysconfig/preinstalled-packages-prebuilt-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/preinstalled-packages-prebuilt-system_ext.xml
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/product.prop
@@ -82,3 +86,7 @@ DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/vintf/manifest.xml
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/vintf/device_framework_matrix_product.xml
+
+# Virtual gamepad
+PRODUCT_PACKAGES += \
+    VirtualGamepad

@@ -7,7 +7,7 @@ ro.gms.dck.eligible_wcc=3
 # Display
 ro.vendor.display.read_temp_interval=30
 ro.vendor.primarydisplay.ambience.histogram_cols=4
-ro.vendor.primarydisplay.preferred_mode=2152x2076x120@120
+ro.vendor.primarydisplay.preferred_mode=2152x2076x120@flag
 ro.vendor.primarydisplay.xrr.blocking_zone.min_refresh_rate_by_nits=5:120
 ro.vendor.primarydisplay.xrr.feat_present_timeout_enabled=true
 ro.vendor.primarydisplay.xrr.version=2.1
@@ -28,7 +28,7 @@ ro.odm.build.media_performance_class=33
 debug.sf.set_idle_timer_ms_4619827677550801153=1500
 
 # SVN
-ro.vendor.build.svn=24
+ro.vendor.build.svn=43
 
 # Vibrator
 persist.vendor.vibrator.hal.pwle.frequency.min_hz=60.0
@@ -42,3 +42,6 @@ ro.vendor.vibrator.hal.dvl.q.factor=4
 ro.vendor.vibrator.hal.loc.coeff=2.98789
 ro.vendor.vibrator.hal.lra.max.voltage=11
 vendor.audio.hapticgenerator.distortion.output.gain=0.45
+
+# Wi-Fi
+ro.vendor.wifi.model=bcm4390
