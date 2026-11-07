@@ -4,8 +4,21 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit some common stuff
-$(call inherit-product, vendor/lineage/config/common_full_foldable_book_telephony.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Google Applications: the bare minimum from vendor/gms. BirdHouse shows the Google feed, so the
+# Pixel Launcher is left out there. Set to false for a build without Google Applications.
+REDLINTU16_GMS := true
+SETUP_WIZARD := true
+# RedWhite themes for recovery and the boot animation: light (white) or dark (black).
+REDLINTU16_RECOVERY_THEME := light
+REDLINTU16_BOOTANIMATION_THEME := light
+
+# Inherit the RedLintu16 config for a phone.
+PHONE := true
+$(call inherit-product, vendor/RedLintu16/config/RedLintu16.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := rango
