@@ -27,7 +27,7 @@ VENDOR_PATH := vendor/google/rango
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+PRODUCT_NAME := RedLintu16_rango
 PRODUCT_SYSTEM_BRAND := google
 PRODUCT_SYSTEM_MANUFACTURER := Google
 PRODUCT_SYSTEM_NAME := generic_system_google
