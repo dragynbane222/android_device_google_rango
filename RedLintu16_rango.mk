@@ -4,21 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Google Applications: the bare minimum from vendor/gms. BirdHouse shows the Google feed, so the
-# Pixel Launcher is left out there. Set to false for a build without Google Applications.
-REDLINTU16_GMS := true
-SETUP_WIZARD := true
-# RedWhite themes for recovery and the boot animation: light (white) or dark (black).
-REDLINTU16_RECOVERY_THEME := light
-REDLINTU16_BOOTANIMATION_THEME := light
-
-# Inherit the RedLintu16 config for a phone.
-PHONE := true
-$(call inherit-product, vendor/RedLintu16/config/RedLintu16.mk)
+# Foldable phone config (replaces vendor/lineage/config/common_full_foldable_book_telephony.mk)
+$(call inherit-product, vendor/RedLintu16/config/common_full_foldable_book_telephony.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := rango
@@ -26,8 +13,17 @@ DEVICE_PATH := device/google/rango
 VENDOR_PATH := vendor/google/rango
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 
+# RedLintu16 options (true = with Google Applications)
+REDLINTU16_GMS := true
+REDLINTU16_RECOVERY_THEME := light
+REDLINTU16_BOOTANIMATION_THEME := light
+
+# RedLintu16 config
+PHONE := true
+$(call inherit-product, vendor/RedLintu16/config/RedLintu16.mk)
+
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := RedLintu16_rango
+PRODUCT_NAME := RedLintu16_$(DEVICE_CODENAME)
 PRODUCT_SYSTEM_BRAND := google
 PRODUCT_SYSTEM_MANUFACTURER := Google
 PRODUCT_SYSTEM_NAME := generic_system_google
